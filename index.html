@@ -12,7 +12,7 @@
  <!-- NAVBAR START -->
     <nav class="navbar">
         <div class="nav-logo">🚀 Community</div>
-    
+
         <!-- Hamburger Icon -->
         <div class="hamburger" id="hamburger">
             <span></span>
@@ -25,7 +25,10 @@
             <li><a href="#">Contributors</a></li>
             <li><a href="https://github.com/Jayanta2004" target="_blank">GitHub</a></li>
         </ul>
+        
+    <button id="themeToggle" class="theme-toggle">🌙</button>
     </nav>
+
 <!-- NAVBAR END -->
 
     <!-- Main heading of the website -->
@@ -234,6 +237,14 @@
             <a href="https://github.com/arpanpurkait" class="card-btn" target="_blank">GitHub</a>
         </div>
       
+
+        <div class="card">
+            <img src="images/user.png" alt="User Photo" class="card-img"> 
+            <h2>Amballa Sneha</h2>
+            <span class="role">Developer</span>
+            <p>"This is 1st PR in EWOC'26 "</p>
+            <a href="https://github.com/Sneha-Amballa" class="card-btn" target="_blank">View Profile</a>
+        </div>
       
         <!-- ADD YOUR NEW CARD ABOVE THIS COMMENT -->
 
@@ -333,6 +344,31 @@ window.addEventListener('scroll', () => {
   heroSubtitle.style.transform = `translateY(${scrollY * 0.15}px)`; // slightly slower
 });
 </script>
+
+<script>
+const toggleBtn = document.getElementById("themeToggle");
+const body = document.body;
+
+// Load saved theme
+if (localStorage.getItem("theme") === "light") {
+  body.classList.add("light-mode");
+  toggleBtn.textContent = "🌞";
+}
+
+toggleBtn.addEventListener("click", () => {
+  body.classList.toggle("light-mode");
+
+  if (body.classList.contains("light-mode")) {
+    toggleBtn.textContent = "🌞";
+    localStorage.setItem("theme", "light");
+  } else {
+    toggleBtn.textContent = "🌙";
+    localStorage.setItem("theme", "dark");
+  }
+});
+</script>
+
+
 
 
 </body>
